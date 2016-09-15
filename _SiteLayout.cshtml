@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@Page.Title - My ASP.NET Web Page</title>
+        <link href="~/Content/font/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script src="~/Scripts/jquery-3.1.0.js"></script>
+        <script src="~/Scripts/angular.min.js"></script>
+        <script src="~/Scripts/Jquery.Color.js"></script>
+        <script src="~/App/app.js"></script>
+        <script src="~/App/Scripts.js"></script>
+        <script src="~/Scripts/API/OpenWeatherAPI.js"></script>
+        <script src="~/App/Overview/Overview-Controller.js"></script>
+        <script src="~/App/Portfolio/Portfolio-Controller.js"></script>
+        <script src="~/App/WhatWeDo/WhatWeDo-Controller.js"></script>
+        <script src="~/App/OurClient/OurClient-Controller.js"></script>
+        <script src="~/App/WhyUs/WhyUs-Controller.js"></script>
+        <script src="~/App/WeatherForcast/WeatherTiles-Controller.js"></script>
+        
+        <!-- Bootstrap -->
+        <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="~/bootstrap/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body >
+
+        <header class="fixed-nav">
+        <div>
+            
+                <nav>
+                    <ul id="menu" class="nav nav-tabs">
+                        <li id="icon"><div class="float-left">
+                            <a href="~/"><img src="~/Content/Images/oneDesignLogo.png" class="nav-logo-img" /></a>
+                        </div></li>
+                        <li><a href="#Overview">Overview</a></li>
+                        <li><a href="#WhyUs">Why Us</a></li>
+                        <li><a href="#WhatWeDo">What We Do</a></li>
+                        <li><a href="#Clients">Our Clients</a></li>
+                        <li><a href="~/Contact">Portfolio</a></li>
+
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Dropdown <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#Overview">Overview</a></li>
+                                <li><a href="#WhyUs">Why Us</a></li>
+                                <li><a href="#WhatWeDo">What We Do</a></li>
+                                <li><a href="#Clients">Our Clients</a></li>
+                                <li><a href="~/Contact">Portfolio</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="body" ng-app="Main">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+            
+        </div>
+        <footer>
+            <div class="footer-area">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - OneDesign</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/onedesign.ofc/" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/onedesign10" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    
+                </div>
+                <div >
+                    <a href="mailto:onedesign.op@gmail.com" class="social-link"><i class="social-icons fa fa-envelope-o" aria-hidden="true"></i></a>: onedesign.op@gmail.com &nbsp;&nbsp;
+                    <i class="social-link social-icons fa fa-whatsapp" aria-hidden="true"></i>: 0852 1883 4777
+                </div>
+            </div>
+        </footer>
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
